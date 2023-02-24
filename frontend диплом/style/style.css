@@ -1,0 +1,1033 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: local("OpenSans-Bold"), url("../fonts/OpenSans-Bold.woff") format("woff"),
+        url("../fonts/OpenSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: local("OpenSans-Regular"), url("../fonts/OpenSans-Regular.woff") format("woff"),
+        url("../fonts/OpenSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: local("OpenSans-SemiBold"), url("../fonts/OpenSans-SemiBold.woff") format("woff"),
+        url("../fonts/OpenSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: rgb(129, 109, 143);
+}
+
+.container {
+    max-width: 1366px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Сброс таблиц */
+
+table td {
+    border-collapse: collapse;
+}
+
+table {
+    border-collapse: collapse;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+
+/* Форма подтверждения удаления */
+
+.form-delete__wrapper {
+    display: none;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 450px;
+    min-height: 215px;
+    background-color: #fff;
+}
+
+.form__wrapper {
+    display: none;
+    z-index: 11;
+    width: 100%;
+    max-width: 450px;
+    min-height: 396px;
+    background-color: #fff;
+    margin: 50px auto;
+}
+
+.form-delete__wrapper--active {
+    display: block;
+}
+
+.form-delete__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px;
+    padding-bottom: 27px;
+    align-items: center;
+}
+
+.form-delete__title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #333333;
+    align-self: center;
+    margin-bottom: 11px;
+}
+
+.form-delete__button-close {
+    position: absolute;
+    right: 14px;
+    top: 17px;
+}
+
+.form-delete__descr {
+    max-width: 240px;
+    margin-bottom: 25px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    text-align: center;
+}
+
+.form-delete__delete-btn {
+    padding: 12.5px 35px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    background-color: #9873ff;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-delete__delete-btn:hover {
+    background-color: #4f30eb;
+}
+
+.form-delete__delete-cancel {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333333;
+    border-bottom: 1px solid #333333;
+}
+
+/* header */
+
+.header__wrapper {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.header__logo {
+    margin-right: 53px;
+}
+
+.header__search {
+    position: relative;
+    max-width: 581px;
+    width: 100%;
+}
+
+.header__input {
+    height: 44px;
+    width: 100%;
+    padding-left: 16px;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+/* main */
+
+.clients__wrapper {
+    padding-left: 90px;
+    padding-top: 40px;
+    padding-bottom: 102px;
+    background-color: #f5f5f5;
+    overflow-x: scroll;
+}
+
+.clients__title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    color: #333333;
+}
+
+/* Таблица заголовки */
+
+.clients__table {
+    max-width: 1186px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.clients__table-th {
+    vertical-align: bottom;
+}
+
+.clients__table-th svg {
+    transition: transform 0.3s ease-in-out;
+}
+
+.clients__btn-id {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #9873ff;
+    margin-right: 45px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+.clients__btn-name {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    margin-right: 64px;
+    margin-bottom: 8px;
+}
+
+.clients__btn-date {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    margin-right: 76px;
+    max-width: 82px;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.clients__btn-change-date {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    max-width: 104px;
+    margin-right: 42px;
+    margin-bottom: 8px;
+}
+
+.clients__contacts {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    margin-bottom: 8px;
+    width: 135px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.clients__actions {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    margin-bottom: 8px;
+}
+
+.clients__table-body {
+    background-color: #ffffff;
+}
+
+/* Таблица контент */
+
+.clients__contacts-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.clients__id {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.clients__name {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.clients__date {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.clients__change-date {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.clients__btn-change {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.clients__btn-change:hover {
+    color: #9873ff;
+}
+
+.clients__btn-delete {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.clients__btn-delete:hover {
+    color: red;
+}
+
+.clients__table-body-tr {
+    border-bottom: 1px solid #c8c5d1;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.clients__add-client {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 12px 26px 12px 58px;
+    border: 1px solid #9873ff;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #9873ff;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.clients__add-client:hover {
+    color: #fff;
+    background-color: #9873ff;
+}
+
+.clients__add-client:active {
+    color: #fff;
+    background-color: #7b61ff;
+}
+
+.clients__add-client svg {
+    position: absolute;
+    padding-top: 2px;
+    top: 13px;
+    left: 28px;
+}
+
+.clients__add-client svg path {
+    transition: fill 0.3s ease-in-out;
+}
+
+.clients__add-client:hover svg path {
+    fill: #fff;
+}
+
+.clients__add-client:active svg path {
+    fill: #fff;
+}
+
+/* Модальное окно затенение */
+
+.modal-wrapper--active {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(33, 33, 33, 0.7);
+    z-index: 10;
+    overflow: auto;
+}
+
+/* Форма добавления */
+
+.form__wrapper {
+    display: none;
+    z-index: 11;
+    width: 100%;
+    max-width: 450px;
+    min-height: 396px;
+    background-color: #fff;
+    margin: 50px auto;
+}
+
+.form__wrapper--active {
+    display: block;
+}
+
+.form__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form__title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #333333;
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 24px;
+}
+
+.form-client__lastname,
+.form-client__secondname,
+.form-client__name {
+    width: 390px;
+    border: none;
+    border-bottom: 1px solid #c8c5d1;
+    display: block;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
+}
+
+.form-client__secondname {
+    margin-bottom: 25px;
+}
+
+.form-client {
+    padding-left: 30px;
+}
+
+.form__button-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.form__save {
+    padding: 17px 35px;
+    background: #9873ff;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    align-self: center;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.form__save:hover {
+    background-color: #7b61ff;
+}
+
+.form__save:active {
+    background-color: #4f30eb;
+}
+
+.form__delete {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333333;
+    border-bottom: 1px solid #333333;
+    align-self: center;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Форма изменения */
+
+.form-change__wrapper {
+    display: none;
+    z-index: 11;
+    width: 100%;
+    max-width: 450px;
+    min-height: 396px;
+    background-color: #fff;
+    margin: 50px auto;
+}
+
+.form-change__wrapper--active {
+    display: block;
+}
+
+.form-change__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.form-change__title-container {
+    margin-bottom: 30px;
+    padding-left: 30px;
+    padding-top: 24px;
+}
+
+.form-change__title {
+    display: inline;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #333333;
+    margin-right: 5px;
+}
+
+.form-change__id-name {
+    display: inline;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+}
+.form-change__id {
+    display: inline;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #b0b0b0;
+}
+
+.form-change__client-lastname,
+.form-change__client-name,
+.form-change__client-secondname {
+    width: 390px;
+    border: none;
+    border-bottom: 1px solid #c8c5d1;
+    display: block;
+    margin-bottom: 32px;
+    padding-bottom: 4px;
+}
+
+.form-change__secondname {
+    margin-bottom: 25px;
+}
+
+.form-change {
+    padding-left: 30px;
+}
+
+.form-change__button-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.form-change__add-contact {
+    width: 100%;
+    padding: 8px 0px;
+    /* background-color: #c8c5d158 ; */
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.form-change__add-contact svg {
+    top: 10px;
+    left: 144px;
+}
+
+.form-change__save {
+    padding: 17px 35px;
+    background: #9873ff;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #ffffff;
+    align-self: center;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.form-change__save:hover {
+    background-color: #7b61ff;
+}
+
+.form-change__save:active {
+    background-color: #4f30eb;
+}
+
+.form-change__delete {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333333;
+    border-bottom: 1px solid #333333;
+    align-self: center;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Контакты */
+
+.form-client__contact-remove {
+    padding: 9px 5px 7px 6px;
+    border: 1px solid #c8c5d1;
+    transition: border 0.3s ease-in-out;
+}
+
+.form-client__contact-remove:hover {
+    border-color: red;
+}
+
+.form-client__contact-remove svg path {
+    transition: fill 0.3s ease-in-out;
+}
+
+.form-client__contact-remove:hover svg path {
+    fill: red;
+}
+
+.form__add-contact {
+    width: 100%;
+    padding: 8px 0px;
+    /* background-color: #c8c5d158 ; */
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    transition: color 0.3s ease-in-out;
+}
+
+.form__add-contact:hover {
+    color: #9873ff;
+}
+
+.form-client__phone {
+    background-color: #c8c5d158;
+    border: 1px solid #c8c5d1;
+    width: 61%;
+    padding-right: 27px;
+}
+
+.form-client__phone:focus-visible {
+    border-radius: 0px;
+}
+
+.form-client__phone::placeholder {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #b0b0b0;
+}
+.form-client__container {
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.form-client__error {
+    position: absolute;
+    top: 55px;
+    left: 135px;
+    display: none;
+    margin: 0 auto;
+    color: red;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.form-client__error--active {
+    display: block;
+    transition: display 0.5s ease-in-out;
+}
+
+.form-client__error-contact {
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    color: red;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    top: 223px;
+    left: 113.5px;
+}
+
+.form-client__error-contact--active {
+    display: block;
+    transition: display 0.5s ease-in-out;
+}
+
+
+
+.form-client__wrapper {
+    background-color: #c8c5d158;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.choices {
+    width: 123px;
+    margin-bottom: 0;
+}
+
+.choices[data-type*="select-one"]::after {
+    content: url(../Img/choices-arrow-down.svg);
+    border: none;
+    right: 28.5px;
+    top: 39%;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+    content: url(../Img/choices-arrow-top.svg);
+    z-index: 3;
+    right: 28px;
+    top: 45%;
+}
+
+.choices.is-open {
+    width: 123px;
+    margin-bottom: 0;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    z-index: 2;
+}
+
+.choices__inner {
+    font-family: "Open Sans";
+    font-style: normal;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    min-height: 37px;
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 400;
+    color: #333333;
+    background-color: #e7e5eb;
+    transition-duration: 0.3s;
+    border-radius: 0;
+    outline: none;
+    border: 1px solid #c8c5d1;
+}
+
+.choices.is-open .choices__inner {
+    /* padding-bottom: 5px; */
+    border: 1px solid #c8c5d1;
+}
+
+.is-open .choices__inner {
+    outline: none;
+    border: none;
+    position: relative;
+    z-index: 3;
+}
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+    outline: none;
+    border: 1px solid #c8c5d1;
+    border-radius: 0;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+    z-index: 2;
+}
+
+.choices__list--single {
+    padding-bottom: 0px; /* из-за этого скачет */
+}
+
+.choices__list.choices__list--dropdown.is-active {
+    border: 1px solid #c8c5d1;
+    outline: none;
+    width: 123px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: #c8c5d1;
+}
+
+.choices__list--dropdown .choices__item--selectable,
+.choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    color: #333333;
+    font-size: 12px;
+    line-height: 100%;
+    font-weight: 400;
+    font-family: "Open Sans";
+    font-style: normal;
+}
+
+.choices.is-open .choices__list {
+    overflow: hidden;
+    width: 123px;
+    outline: none;
+}
+
+.choices .choices__list.choices__list--dropdown .is-selected {
+    display: none;
+}
+
+.form-change__wrapper-contact {
+    display: flex;
+    flex-direction: column;
+    background-color: #c8c5d158;
+    margin-bottom: 25px;
+}
+
+.form-change__error{
+    position: absolute;
+    top: 55px;
+    left: 135px;
+    display: none;
+    margin: 0 auto;
+    color: red;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.form-change__error--active {
+    display: block;
+    transition: display 0.5s ease-in-out;
+}
+
+.form-change__error-contact {
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    color: red;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    top: 223px;
+    left: 113.5px;
+}
+
+.form-change__error-contact--active {
+    display: block;
+    transition: display 0.5s ease-in-out;
+}
+
+.header-list {
+    position: absolute;
+    width: 100%;
+}
+
+.header-list__item {
+    position: relative;
+    border-bottom: 1px solid #c8c5d1;
+    border-left: 1px solid #c8c5d1;
+    border-right: 1px solid #c8c5d1;
+    background-color: #fff;
+    height: 29px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #b0b0b0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-list__link {
+    padding: 5px 20px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #b0b0b0;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-list__item:hover {
+    background-color: #e8e8eb;
+}
+
+.header-list__item:active {
+    background-color: #bdbaba;
+}
+
+.clients__date-span {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #b0b0b0;
+}
+
+.clients__change-date-span {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #b0b0b0;
+}
